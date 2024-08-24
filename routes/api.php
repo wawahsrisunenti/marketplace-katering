@@ -16,4 +16,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
+    Route::get('/merchants', [MerchantController::class, 'index']);
+    Route::post('/merchants', [MerchantController::class, 'store']);
+    Route::post('/menu', [MenuController::class, 'store']);
+    Route::post('/order', [OrderController::class, 'store']);
+
 });
